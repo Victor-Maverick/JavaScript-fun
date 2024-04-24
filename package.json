@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "name": "js_assessment",
+  "description": "This is an assessment for the javascript classes so far",
+  "version": "1.0.0",
+  "main": "task.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
