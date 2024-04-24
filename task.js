@@ -1,5 +1,5 @@
 function sortScores(testScores){
-    var outputArray = testScores.filter(number => number >= 70 && number<101)
+    return testScores.filter(number => number >= 70 && number<101)
   
 }
 
@@ -12,5 +12,11 @@ function squareScores(integerList){
     return integerList.map(number => number * number)    
 }
 
+function distributeBooks(listOfMembers){
+    for (const value of listOfMembers){
+        value.book += value.name+"'s book"
+    }
+}
 
-module.exports = {sortScores, increaseScores, squareScores}
+
+module.exports = {sortScores, increaseScores, squareScores, distributeBooks}
