@@ -1,4 +1,4 @@
-let {sortScores, increaseScores, squareScores, distributeBooks} = require('./task.js')
+let {sortScores, increaseScores, squareScores, distributeBooks, getAfternoonClasses, calculateExpenses} = require('./task.js')
 
 test("sort student scores", ()=>{
     let testScores = [65, 70, 22, 90, 77]
@@ -43,4 +43,33 @@ test("Assign books", ()=> {
     distributeBooks(readers)
     expect(readers[0].book).toBe("Emily's book")
 
+})
+
+test("Get All Afternoon classes", ()=>{
+    var classesTime = ["9:00 AM", "11:00 AM", "1:00 PM", "3:00 PM", "5:00 PM", "6:00 PM"]
+    expect(getAfternoonClasses(classesTime)).toEqual(["1:00 PM", "3:00 PM", "5:00 PM", "6:00 PM"])
+})
+
+test("Calculate expenses", ()=> {
+    var groceriesExpense = {
+        key: "groceries",
+        value: 150
+    }
+
+    var diningOutExpense = {
+        key: "dining out",
+        value: 100
+    }
+
+    var transportationExpense = {
+        key: "transportation",
+        value: 50
+    }
+    var entertainmentExpense = {
+        key: "entertainment",
+        value: 80
+    }
+    var products = { groceriesExpense, diningOutExpense, transportationExpense, entertainmentExpense}
+    expect(calculateExpenses(products)).toBe(380)
+    
 })

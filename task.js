@@ -17,6 +17,18 @@ function distributeBooks(listOfMembers){
         value.book += value.name+"'s book"
     }
 }
+function getAfternoonClasses(classesTime){
+    var result = classesTime.filter(time => time.includes("P", time.length-2))
+    return result
+}
+
+function calculateExpenses(products){
+    var total = 0
+    for(const expense in products){
+        total += products[expense].value
+    }
+    return total
+}
 
 
-module.exports = {sortScores, increaseScores, squareScores, distributeBooks}
+module.exports = {sortScores, increaseScores, squareScores, distributeBooks, getAfternoonClasses, calculateExpenses}
